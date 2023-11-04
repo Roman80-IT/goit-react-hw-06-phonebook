@@ -14,7 +14,7 @@
 `package.json`
 
 ```jsx
-"homepage": "https://Roman80-IT.github.io/goit-react-hw-04-phonebook-nativ/",
+"homepage": "https://Roman80-IT.github.io/goit-react-hw-06-phonebook-redux/",
 ```
 
 ### Усунення помилок при інсталяції
