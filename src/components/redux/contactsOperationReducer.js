@@ -52,10 +52,10 @@ const contactsSlice = createSlice({
       // return (state = action.payload);
     },
 
-    // resetForm(state) {
-    //   state.name = '';
-    //   state.number = '';
-    // },
+    resetForm(state) {
+      state.name = '';
+      state.number = '';
+    },
   },
 });
 
@@ -65,6 +65,6 @@ export const {
   addContact,
   deleteContact,
   setFilter,
-  // resetForm,
+  resetForm,
 } = contactsSlice.actions;
 export const contactsOperationReducer = contactsSlice.reducer;

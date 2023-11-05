@@ -2,23 +2,6 @@ import { useSelector } from 'react-redux';
 import { Contact } from 'components/Contact/Contact';
 import { getContacts, getFilter } from 'components/redux/selectors';
 
-// export const ContactList = ({ contacts, onDelete }) => {
-//   return (
-//     <ul>
-//       {contacts.map(contact => (
-//         <li key={contact.id}>
-//           <Contact
-//             id={contact.id}
-//             name={contact.name}
-//             number={contact.number}
-//             onDelete={onDelete}
-//           />
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// };
-
 const getFilteredContacts = (contacts, filter) => {
   return contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())

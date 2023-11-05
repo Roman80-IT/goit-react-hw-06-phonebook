@@ -1,28 +1,18 @@
-// export const Filter = ({ filter, onChange }) => {
-//   return (
-//     <>
-//       <p>Find contacts by name</p>
-//       <input
-//         type="text"
-//         name="filter"
-//         value={filter}
-//         onChange={event => onChange(event.target.value)}
-//       />
-//     </>
-//   );
-// };
-
+import { setFilter } from 'components/redux/contactsOperationReducer';
+import { getFilter } from 'components/redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 
 export const Filter = () => {
-  const filter = useSelector(state => state.contactsOperation.filter);
   const dispatch = useDispatch();
+  const filter = useSelector(getFilter);
+  // const filter = useSelector(state => state.contactsOperation.filter);
 
   const handleFilterChange = event => {
-    dispatch({
-      type: 'contactsOperation/setFilter',
-      payload: event.target.value.trim(),
-    });
+    dispatch(setFilter(event.target.value.trim()));
+    // {
+    // type: 'contactsOperation/setFilter',
+    // payload: event.target.value.trim(),
+    // }
   };
 
   return (
