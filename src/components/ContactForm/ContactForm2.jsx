@@ -5,8 +5,10 @@ import {
   addContact,
   addName,
   addNumber,
-  // resetForm,
+  resetForm,
 } from 'components/redux/contactsOperationReducer';
+
+// { onSubmit, isNameHas }
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -26,9 +28,8 @@ export const ContactForm = () => {
   //submit form
   const handleSubmit = event => {
     event.preventDefault();
-    const form = event.target;
+    // const form = event.target;
     const newContact = { name, number };
-    form.reset();
 
     const isNameHas = name => {
       return contacts.some(contact => contact.name === name);
@@ -52,14 +53,13 @@ export const ContactForm = () => {
     //   payload: data,
     // });
 
+    dispatch(resetForm());
     // resetForm;
     // скидання значень полів `name` та `number` в Redux-стейт після додавання контакту
     // dispatch({
     //   type: 'contactsOperation/resetForm',
     // });
   };
-
-  // dispatch(resetForm());
 
   return (
     <form onSubmit={handleSubmit}>
